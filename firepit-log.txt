@@ -1,0 +1,24 @@
+Welcome to firepit v1.1.0!
+Doing JSON parses for version checks at C:\snapshot\firepit\vendor\node_modules\firebase-tools\package.json
+firebase-tools
+Installed ft@10.9.2 and packaged ft@10.9.2
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\lib\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\snapshot\firepit\node_modules\npm\bin\npm-cli
+Found npm/bin/npm-cli install.
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\lib\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\snapshot\firepit\node_modules\npm\bin\npm-cli
+Found npm/bin/npm-cli install.
+Runtime binaries created.
+C:\Users\krist\DOCUME~1\FIREBA~1.EXE
+C:\Users\krist\DOCUME~1\FIREBA~1.EXE,C:\snapshot\firepit\firepit.js,C:\Users\krist\CACHE~1\firebase\runtime\node.js,C:\Users\krist\AppData\Roaming\npm\\node_modules\firebase-tools\lib\bin\firebase.js,projects:list,--json
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\lib\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\snapshot\firepit\node_modules\npm\bin\npm-cli
+Found npm/bin/npm-cli install.
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\lib\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\Users\krist\.cache\firebase\tools\node_modules\npm\bin\npm-cli
+Checking for npm/bin/npm-cli install at C:\snapshot\firepit\node_modules\npm\bin\npm-cli
+Found npm/bin/npm-cli install.
+Error: EPERM: operation not permitted, open 'C:\Users\krist\CACHE~1\firebase\runtime\node.bat'

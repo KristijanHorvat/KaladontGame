@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "493525377849",
+    "project_id": "feedback-form-5a2b2",
+    "storage_bucket": "feedback-form-5a2b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493525377849:android:6221c76695d0c72987bee8",
+        "android_client_info": {
+          "package_name": "com.example.first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493525377849-a6nitdmkf4q51qbr5maakesg4e68t6jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB28pY3UyCflJMxbE9HvCJtCvVgQ6n8yfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493525377849-a6nitdmkf4q51qbr5maakesg4e68t6jo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "493525377849-gkpdm7ohffovie6v12sashd737paatc7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firstApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
