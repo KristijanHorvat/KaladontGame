@@ -78,8 +78,9 @@ class _GameState extends State<Game> {
                   if(check(word, userWord)) {
                     word = getAnother(userWord);
                     myController.text='';
-
-                    incrementPoint();
+                    if(word!="Riječ ne postoji!") {
+                      incrementPoint();
+                    }
                   }
                   if(Contains(UserTypedWords, userWord)){
                     _isShow=true;
