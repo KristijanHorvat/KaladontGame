@@ -89,7 +89,7 @@ class _GameState extends State<Game> {
                       _isShow=true;
                       changeVariableOnUI(" "+word+"\nIzgubio si!");
                     }
-                  if(word=="Pobjedio si!"){
+                  if(word=="Pobjedio si!" || word=="Riječ ne postoji!"){
                     _isShow=true;
                     changeVariableOnUI(word);
                     debugPrint(word);
