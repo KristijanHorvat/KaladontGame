@@ -39,13 +39,15 @@ List shuffle(List items) {
 
 String getAnother(String wordPlayer){
   for(var newWord in shuffledWords){
-    if(arrayOfWords.contains(wordPlayer)==true) {
-      if(newWord.substring(0,2) == wordPlayer.substring(wordPlayer.length-2) && usedWords.contains(newWord)==false){
-          return newWord;
+    if(EndGameWords.contains(wordPlayer)==false){
+      if(arrayOfWords.contains(wordPlayer)==true) {
+        if(newWord.substring(0,2) == wordPlayer.substring(wordPlayer.length-2) && usedWords.contains(newWord)==false){
+            return newWord;
+          }
         }
+      else{
+        return "Riječ ne postoji!";
       }
-    else{
-      return "Riječ ne postoji!";
     }
   }
   return 'Pobjedio si!';

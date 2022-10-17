@@ -11,47 +11,83 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.deepPurple,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(20.0),
+            SizedBox(height:20),
+            Row(children: <Widget>[
+              Expanded(
+                child: Container(
+                  color: Colors.deepOrangeAccent,
+                    height: 100,
+                  child: TextButton.icon(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/game');
+                  },
+                  icon: Icon(Icons.play_arrow,size: 50),
+                  label: Text('Igraj',
+                    style: TextStyle(
+                      fontSize: 40,
+                      foreground: Paint()
+                        ..style = PaintingStyle.fill
+                        ..strokeWidth = 2
+                        ..color = Colors.blue[700]!,
+                    ),
+                  ),
+                )),),
+              SizedBox(height:20),
+
+            ]
+            ),
+            Row(children: <Widget>[
+            Expanded(child: Container(
               color: Colors.lightGreen,
+              height: 100,
               child: TextButton.icon(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/game');
-                },
-                icon: Icon(Icons.play_arrow),
-                label: Text('Play'),
-              )
-            ),
-            Container(
-              padding: EdgeInsets.all(20.0),
-              color: Colors.redAccent,
-              child: TextButton.icon(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/ranking');
-                },
-                icon: Icon(Icons.traffic),
-                label: Text('Ranking'),
+              onPressed: (){
+              Navigator.pushNamed(context, '/ranking');
+              },
+              icon: Icon(Icons.traffic, size: 50),
+                label: Text('Ljestvica',
+                  style: TextStyle(
+                    fontSize: 30,
+                    foreground: Paint()
+                      ..style = PaintingStyle.fill
+                      ..strokeWidth = 2
+                      ..color = Colors.blue[700]!,
+                  ),
+                ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(20.0),
-              color: Colors.grey,
+              ),),
+            SizedBox(height:20),]),
+              Row(children: <Widget>[
+            Expanded(child: Container(
+              color: Colors.amber,
+              height: 100,
               child: TextButton.icon(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/settings');
-                },
-                icon: Icon(Icons.settings_accessibility_sharp),
-                label: Text('Settings'),
-              ),
-            )
+              onPressed: (){
+              Navigator.pushNamed(context, '/settings');
+              },
+              icon: Icon(Icons.settings_accessibility_sharp, size: 50),
+                label: Text('Postavke',
+                  style: TextStyle(
+                    fontSize: 30,
+                    foreground: Paint()
+                      ..style = PaintingStyle.fill
+                      ..strokeWidth = 2
+                      ..color = Colors.blue[700]!,
+                  ),
+                ),
+            ),
+            ),),
+            SizedBox(height:20),
           ],
         ),
+          ])
       ),
-    );
+      );
   }
 }
