@@ -31,7 +31,11 @@ class _GameState extends State<Game> {
   void incrementPoint(){
     points++;
     setState(() => points=points);
-    debugPrint(points.toString());
+  }
+
+  void decrementPoint(){
+    points--;
+    setState(() => points=points);
   }
 
   Widget build(BuildContext context) {
@@ -78,23 +82,25 @@ class _GameState extends State<Game> {
                   if(check(word, userWord)) {
                     word = getAnother(userWord);
                     myController.text='';
-                    if(word!="Riječ ne postoji!") {
-                      incrementPoint();
-                    }
+                    incrementPoint();
                   }
                   if(Contains(UserTypedWords, userWord)){
                     _isShow=true;
                     changeVariableOnUI("Ponovio si riječ!\nIzgubio si!");
+                    decrementPoint();
                   }
                   if(CheckIfLost(word)==true){
                       _isShow=true;
                       changeVariableOnUI(" "+word+"\nIzgubio si!");
-                    }
+                      decrementPoint();
+                  }
                   if(word=="Pobjedio si!" || word=="Riječ ne postoji!"){
                     _isShow=true;
                     changeVariableOnUI(word);
                     debugPrint(word);
-                  } if(Contains(EndGameWords, word)==false){
+                    if(word=="Riječ ne postoji!") decrementPoint();
+                  }
+                  if(Contains(EndGameWords, word)==false){
                     usedWords.add(word);
                     debugPrint(word);
                   }

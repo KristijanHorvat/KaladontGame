@@ -39,11 +39,11 @@ List shuffle(List items) {
   return items;
 }
 
-String getAnother(String wordPlayer){ //get new word to continue playing
+String getAnother(String wordPlayer){ //get new word to continue playing... kad zavrsava npr na elj treba popravit
   for(var newWord in shuffledWords){
     if(EndGameWords.contains(wordPlayer)==false){
       if(arrayOfWords.contains(wordPlayer)==true) {
-        if(wordPlayer.substring(wordPlayer.length-3, wordPlayer.length-1)=="lj" || wordPlayer.substring(wordPlayer.length-3, wordPlayer.length-1)=="nj" || wordPlayer.substring(wordPlayer.length-3, wordPlayer.length-1)=="dž"){
+        if(wordPlayer.substring(wordPlayer.length-3, wordPlayer.length-1)=="lj" || wordPlayer.substring(wordPlayer.length-3, wordPlayer.length-1)=="nj" || wordPlayer.substring(wordPlayer.length-3, wordPlayer.length-1)=="dž" || wordPlayer.substring(wordPlayer.length-2)=="lj" || wordPlayer.substring(wordPlayer.length-2)=="nj" || wordPlayer.substring(wordPlayer.length-2)=="dž"){
           if(newWord.substring(0,3) == wordPlayer.substring(wordPlayer.length-3) && usedWords.contains(newWord)==false){
             return newWord;
           }
@@ -62,7 +62,7 @@ String getAnother(String wordPlayer){ //get new word to continue playing
 }
 
 bool check(String wordComputer, String wordPlayer){ //check what user entered
-  if(wordComputer.substring(wordComputer.length-3, wordComputer.length-1)=="lj" || wordComputer.substring(wordComputer.length-3, wordComputer.length-1)=="nj" || wordComputer.substring(wordComputer.length-3, wordComputer.length-1)=="dž"){
+  if(wordComputer.substring(wordComputer.length-3, wordComputer.length-1)=="lj" || wordComputer.substring(wordComputer.length-3, wordComputer.length-1)=="nj" || wordComputer.substring(wordComputer.length-3, wordComputer.length-1)=="dž" || wordComputer.substring(wordComputer.length-2)=="lj" || wordComputer.substring(wordComputer.length-2)=="nj" || wordComputer.substring(wordComputer.length-2)=="dž"){
     if(wordComputer.substring(wordComputer.length-3) == wordPlayer.substring(0,3) && wordPlayer.length>2)   {
       return true;
       }
