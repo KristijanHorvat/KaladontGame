@@ -1,6 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:first_app/main.dart';
 import 'package:first_app/FeedbackDialogPart.dart';
+import 'package:first_app/levelChoose.dart';
 
 class SettingsPageMy extends StatefulWidget {
   const SettingsPageMy({Key? key}) : super(key: key);
@@ -21,14 +23,23 @@ class _SettingsPageMyState extends State<SettingsPageMy> {
         elevation: 0,
       ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text('Feedback'),
+        child: Column(children: <Widget>[
+          ElevatedButton(child: const Text('Feedback'),
           onPressed: () {
             showDialog(
                 context: context, builder: (context) => const FeedbackDialog());
           },
         ),
-      ),
+          Row(children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text("Level ",
+                style: TextStyle(fontSize: 30),)),
+                Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: const LevelChoose())
+          ]),
+      ])),
     );
   }
 }

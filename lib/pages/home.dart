@@ -20,7 +20,9 @@ class _HomeState extends State<Home> {
             SizedBox(height:20),
             Row(children: <Widget>[
               Expanded(
-                child: Container(
+                child: Padding(
+                padding: EdgeInsets.all(16.0),
+                    child: Container(
                   color: Colors.deepOrangeAccent,
                     height: 100,
                   child: TextButton.icon(
@@ -37,13 +39,16 @@ class _HomeState extends State<Home> {
                         ..color = Colors.blue[700]!,
                     ),
                   ),
-                )),),
+                ))),),
               SizedBox(height:20),
 
             ]
             ),
             Row(children: <Widget>[
-            Expanded(child: Container(
+              Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Container(
               color: Colors.lightGreen,
               height: 100,
               child: TextButton.icon(
@@ -61,10 +66,13 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-              ),),
+              ),)),
             SizedBox(height:20),]),
               Row(children: <Widget>[
-            Expanded(child: Container(
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Container(
               color: Colors.amber,
               height: 100,
               child: TextButton.icon(
@@ -82,7 +90,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
             ),
-            ),),
+            ),)),
             SizedBox(height:20),
           ],
         ),

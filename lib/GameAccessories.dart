@@ -2,6 +2,7 @@ import 'dart:math';
 //import 'package:first_app/txtLoader.dart';
 //import 'package:first_app/txtLoaderMore50KWords.dart';
 import 'package:first_app/allWords200K.dart';
+import 'package:first_app/levelChoose.dart';
 
 //List<String> arrayOfWords = ['argument', 'kaladont', 'auto', 'brod', 'komp', 'cement', 'bolesnik', 'kuhar', 'laptop', 'škola', 'miš', 'okej'];
 //List<String> arrayOfWords = ['ljekarna', "meljo", "maslac", 'kenjo', 'pedžo', 'sero', 'rogonja', 'našice', 'ljopata', 'džopa', 'njopa', 'pas'];
