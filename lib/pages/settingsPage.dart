@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:first_app/GameAccessories.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/FeedbackDialogPart.dart';
 import 'package:first_app/levelChoose.dart';
@@ -13,6 +14,10 @@ class SettingsPageMy extends StatefulWidget {
 
 class _SettingsPageMyState extends State<SettingsPageMy> {
   @override
+  void dispose() {
+    ChangeWordsByLevel();
+    super.dispose();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],

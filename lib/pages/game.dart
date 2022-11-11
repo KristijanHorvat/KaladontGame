@@ -79,17 +79,17 @@ class _GameState extends State<Game> {
               child: TextButton.icon(
                 onPressed: (){
                   var userWord = myController.text;
-                  if(check(word, userWord)) {
+                  if(check(word, userWord)) { // usporedba slova
                     word = getAnother(userWord);
                     myController.text='';
                     incrementPoint();
                   }
-                  if(Contains(UserTypedWords, userWord)){
+                  if(Contains(UserTypedWords, userWord)){ //provjera jel vec upiso prije tu rijec
                     _isShow=true;
                     changeVariableOnUI("Ponovio si riječ!\nIzgubio si!");
                     decrementPoint();
                   }
-                  if(CheckIfLost(word)==true){
+                  if(CheckIfLost(word)==true){ //provejera jel dobivena rijec jedna od endgame rijeci
                       _isShow=true;
                       changeVariableOnUI(" "+word+"\nIzgubio si!");
                       decrementPoint();
@@ -98,13 +98,15 @@ class _GameState extends State<Game> {
                     _isShow=true;
                     changeVariableOnUI(word);
                     debugPrint(word);
+
                     if(word=="Riječ ne postoji!") decrementPoint();
                   }
-                  if(Contains(EndGameWords, word)==false){
+                  if(Contains(EndGameWords, word)==false){ //stavlja rijeci u listu vec iskoristenih rijeci
                     usedWords.add(word);
                     debugPrint(word);
+
                   }
-                  UserTypedWords.add(userWord);
+                  UserTypedWords.add(userWord); //doda rijec u igracovu listu iskoristenih rijeci
                 },
                 icon: Icon(Icons.heat_pump),
                 label: Text('Submit'),
