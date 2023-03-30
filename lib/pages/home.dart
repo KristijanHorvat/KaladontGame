@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '';
 
@@ -13,7 +14,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.deepPurple[600],
-      body: SafeArea(
+      body: Center(
+        child: Container(
+          width: kIsWeb ? 400.0 : double.infinity,
+      child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -113,6 +117,6 @@ class _HomeState extends State<Home> {
         ),
           ])
       ),
-      );
+      )));
   }
 }
