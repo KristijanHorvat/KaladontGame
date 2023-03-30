@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,21 +12,27 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.deepPurple[600],
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Image.asset('assets/logo2.png'),
             SizedBox(height:20),
             Row(children: <Widget>[
               Expanded(
                 child: Padding(
                 padding: EdgeInsets.all(16.0),
                     child: Container(
-                  color: Colors.deepOrangeAccent,
                     height: 100,
                   child: TextButton.icon(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrangeAccent),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(150.0),
+                            ))),
                   onPressed: (){
                     Navigator.pushNamed(context, '/game');
                   },
@@ -49,14 +56,19 @@ class _HomeState extends State<Home> {
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Container(
-              color: Colors.lightGreen,
               height: 100,
               child: TextButton.icon(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.lightGreen),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ))),
               onPressed: (){
               Navigator.pushNamed(context, '/ranking');
               },
               icon: Icon(Icons.traffic, size: 50),
-                label: Text('Ljestvica',
+                label: Text('Kako igrati?',
                   style: TextStyle(
                     fontSize: 30,
                     foreground: Paint()
@@ -73,9 +85,14 @@ class _HomeState extends State<Home> {
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Container(
-              color: Colors.amber,
               height: 100,
               child: TextButton.icon(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ))),
               onPressed: (){
               Navigator.pushNamed(context, '/settings');
               },

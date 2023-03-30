@@ -9,7 +9,7 @@ class LevelChoose extends StatefulWidget {
   State<LevelChoose> createState() => _State();
 }
 
-String holder = "easy";
+String holder = "medium";
 String getLevel(){
   return holder;
 }
@@ -18,15 +18,18 @@ class _State extends State<LevelChoose> {
   String dropdownValue = holder;
   void getDropDownItem(){
     holder = dropdownValue ;
-    print("getdrop "+dropdownValue);
   }
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
+
       value: dropdownValue,
       icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
-      style: const TextStyle(color: Colors.blue),
+      elevation: 10,
+      style: const TextStyle(
+          color: Colors.blue,
+        fontSize: 25,
+      ),
       underline: Container(
         height: 2,
         color: Colors.blue,

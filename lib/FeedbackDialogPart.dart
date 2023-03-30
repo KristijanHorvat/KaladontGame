@@ -29,7 +29,7 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
           controller: _controller,
           keyboardType: TextInputType.multiline,
           decoration: const InputDecoration(
-            hintText: 'Enter your feedback here',
+            hintText: 'Pošalji nam riječ pa ćemo je dodati!',
             filled: true,
           ),
           maxLines: 5,
@@ -45,11 +45,11 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
       ),
       actions: [
         TextButton(
-          child: const Text('Cancel'),
+          child: const Text('Poništi'),
           onPressed: () => Navigator.pop(context),
         ),
         TextButton(
-          child: const Text('Send'),
+          child: const Text('Pošalji'),
           onPressed: () async {
             // Only if the input form is valid (the user has entered text)
             if (_formKey.currentState!.validate()) {
@@ -68,9 +68,9 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
                   'feedback': _controller.text,
                 });
 
-                message = 'Feedback sent successfully';
+                message = 'Uspješno poslano!';
               } catch (e) {
-                message = 'Error when sending feedback';
+                message = 'Slanje nije uspjelo!';
               }
 
               // Show a snackbar with the result

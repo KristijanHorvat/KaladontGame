@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:developer';
 import 'package:first_app/generator.dart';
-import 'package:first_app/txtLoader.dart';
 import 'package:first_app/loseChecker.dart';
 import 'package:first_app/GameAccessories.dart';
 
@@ -38,11 +37,43 @@ class _GameState extends State<Game> {
     setState(() => points=points);
   }
 
+  void processWord(){
+    var userWord = myController.text;
+    if(check(word, userWord)) { // usporedba slova
+      word = getAnother(userWord);
+      myController.text='';
+      incrementPoint();
+    }
+    if(Contains(UserTypedWords, userWord)){ //provjera jel vec upiso prije tu rijec
+      _isShow=true;
+      changeVariableOnUI("Ponovio si riječ!\nIzgubio si!");
+      decrementPoint();
+    }
+    if(CheckIfLost(word)==true){ //provejera jel dobivena rijec jedna od endgame rijeci
+      _isShow=true;
+      changeVariableOnUI(" "+word+"\nIzgubio si!");
+      decrementPoint();
+    }
+    if(word=="Pobjedio si!" || word=="Riječ ne postoji!"){
+      _isShow=true;
+      changeVariableOnUI(word);
+      debugPrint(word);
+
+      if(word=="Riječ ne postoji!") decrementPoint();
+    }
+    if(Contains(EndGameWords, word)==false){ //stavlja rijeci u listu vec iskoristenih rijeci
+      usedWords.add(word);
+      debugPrint(word);
+
+    }
+    UserTypedWords.add(userWord); //doda rijec u igracovu listu iskoristenih rijeci
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.deepPurple[600],
         title: Text('Gaming'),
         centerTitle: true,
         elevation: 0,
@@ -67,6 +98,7 @@ class _GameState extends State<Game> {
             ),
             Container(
               child: TextField(
+                onEditingComplete: processWord,
                 controller: myController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -78,35 +110,7 @@ class _GameState extends State<Game> {
               padding: EdgeInsets.all(20.0),
               child: TextButton.icon(
                 onPressed: (){
-                  var userWord = myController.text;
-                  if(check(word, userWord)) { // usporedba slova
-                    word = getAnother(userWord);
-                    myController.text='';
-                    incrementPoint();
-                  }
-                  if(Contains(UserTypedWords, userWord)){ //provjera jel vec upiso prije tu rijec
-                    _isShow=true;
-                    changeVariableOnUI("Ponovio si riječ!\nIzgubio si!");
-                    decrementPoint();
-                  }
-                  if(CheckIfLost(word)==true){ //provejera jel dobivena rijec jedna od endgame rijeci
-                      _isShow=true;
-                      changeVariableOnUI(" "+word+"\nIzgubio si!");
-                      decrementPoint();
-                  }
-                  if(word=="Pobjedio si!" || word=="Riječ ne postoji!"){
-                    _isShow=true;
-                    changeVariableOnUI(word);
-                    debugPrint(word);
-
-                    if(word=="Riječ ne postoji!") decrementPoint();
-                  }
-                  if(Contains(EndGameWords, word)==false){ //stavlja rijeci u listu vec iskoristenih rijeci
-                    usedWords.add(word);
-                    debugPrint(word);
-
-                  }
-                  UserTypedWords.add(userWord); //doda rijec u igracovu listu iskoristenih rijeci
+                  processWord();
                 },
                 icon: Icon(Icons.heat_pump),
                 label: Text('Submit'),

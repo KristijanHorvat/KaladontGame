@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:first_app/GameAccessories.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/FeedbackDialogPart.dart';
@@ -22,29 +20,47 @@ class _SettingsPageMyState extends State<SettingsPageMy> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
-        title: Text('Settings'),
+        backgroundColor: Colors.deepPurple[600],
+        title: const Text('Postavke'),
         centerTitle: true,
         elevation: 0,
       ),
       body: Center(
-        child: Column(children: <Widget>[
-          ElevatedButton(child: const Text('Feedback'),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+          ElevatedButton(child: const Text('Predloži riječ!'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.deepPurple,
+              onPrimary: Colors.white,
+              shadowColor: Colors.deepPurple,
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0)),
+              minimumSize: Size(100, 40), //////// HERE
+            ),
           onPressed: () {
             showDialog(
                 context: context, builder: (context) => const FeedbackDialog());
           },
         ),
-          Row(children: <Widget>[
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const <Widget>[
             Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text("Level ",
-                style: TextStyle(fontSize: 30),)),
+              padding: EdgeInsets.all(10.0),
+              child: Text("Razina težine: ",
+                style: TextStyle(fontSize: 25),)),
                 Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: const LevelChoose())
-          ]),
-      ])),
+                    padding: EdgeInsets.all(10.0),
+                    child: LevelChoose())
+          ]
+          ),
+      ]
+        )
+      ),
     );
   }
 }
