@@ -38,7 +38,7 @@ class _GameState extends State<Game> {
   }
 
   void processWord(){
-    var userWord = myController.text;
+    var userWord = myController.text.toLowerCase();
     if(check(word, userWord)) { // usporedba slova
       word = getAnother(userWord);
       myController.text='';
@@ -47,11 +47,13 @@ class _GameState extends State<Game> {
     if(Contains(UserTypedWords, userWord)){ //provjera jel vec upiso prije tu rijec
       _isShow=true;
       changeVariableOnUI("Ponovio si riječ!\nIzgubio si!");
+      shuffle(shuffledWords);
       decrementPoint();
     }
     if(CheckIfLost(word)==true){ //provejera jel dobivena rijec jedna od endgame rijeci
       _isShow=true;
       changeVariableOnUI(" "+word+"\nIzgubio si!");
+      shuffle(shuffledWords);
       decrementPoint();
     }
     if(word=="Pobjedio si!" || word=="Riječ ne postoji!"){

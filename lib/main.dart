@@ -3,7 +3,6 @@ import 'package:first_app/pages/home.dart';
 import 'package:first_app/pages/game.dart';
 import 'package:first_app/pages/ranking.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'package:first_app/pages/settingsPage.dart';
 import 'package:first_app/wordsAlgorithms.dart';
 import 'package:first_app/words376988.dart';
