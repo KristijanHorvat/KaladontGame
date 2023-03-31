@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'package:first_app/txtLoaderMore50KWords.dart';
+//import 'package:first_app/txtLoaderMore50KWords.dart';
 import 'package:first_app/allWords200K.dart';
 import 'package:first_app/levelChoose.dart';
-import 'package:first_app/txtLoaderEasy.dart';
+//import 'package:first_app/txtLoaderEasy.dart';
 import 'package:first_app/wordsAlgorithms.dart';
 
 //List<String> arrayOfWords = ['argument', 'kaladont', 'auto', 'brod', 'komp', 'cement', 'bolesnik', 'kuhar', 'laptop', 'škola', 'miš', 'okej'];
@@ -10,20 +10,33 @@ import 'package:first_app/wordsAlgorithms.dart';
 
 //List<String> arrayOfWords = loadWordsForCheking();
 
-List<String> gameWords = loadWords50K();
+List<String> gameWords=getElements(loadWordsImenice(), 50);
+
+List<String> getElements(List userInput, nIndex){
+  List<String> elements = [];
+  for(int x = 0; x<userInput.length;x++){
+    if(x % nIndex == 0){
+      elements.add(userInput[x]);
+    }
+  }
+  return elements;
+}
 
 void ChangeWordsByLevel(){
   gameWords=[];
   if(getLevel()=="easy"){
-    gameWords=loadWordsEasy();
+    //gameWords=loadWordsEasy();
+    gameWords=getElements(loadWordsImenice(), 100);
     //debugPrint(gameWords[0]);
   }
   if(getLevel()=="medium"){
-    gameWords=loadWords50K();
+    //gameWords=loadWords50K();
+    gameWords=getElements(loadWordsImenice(), 50);
     //debugPrint(gameWords[0]);
   }
   if(getLevel()=="hard"){
-    gameWords=loadWordsImenice();
+    //gameWords=loadWordsImenice();
+    gameWords=getElements(loadWordsImenice(), 1);
     //debugPrint(gameWords[0]);
   }
   shuffledWords = shuffle(gameWords);

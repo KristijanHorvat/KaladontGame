@@ -5,7 +5,8 @@ import 'package:first_app/pages/ranking.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:first_app/pages/settingsPage.dart';
 import 'package:first_app/wordsAlgorithms.dart';
-import 'package:first_app/words376988.dart';
+//import 'package:first_app/words376988.dart';
+import 'package:first_app/allWords200K.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +17,7 @@ Future<void> main() async {
         messagingSenderId: "493525377849",
         projectId: "feedback-form-5a2b2",
   ));
-  ucitaj(loadWordsForChekingNew());
+  ucitaj(loadWordsImenice());
   main_2();
 }
 
